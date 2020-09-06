@@ -1,2 +1,3 @@
 # skr-printer-editor
-使用 web-component 编写打印编辑器
+
+编写打印编辑器(尝试使用 svelte)
