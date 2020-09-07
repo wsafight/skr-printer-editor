@@ -11,8 +11,11 @@ interface WithUid {
 type CompareFun<T> = (prev: T, next: T) => boolean;
 
 class SnapshotHistory<T extends WithUid> {
+  static gcNumber = 1;
+
   private snapshots: T[] = []
   private cursor: number = -1
+  private gc: WeakMap<T, number> = new WeakMap<T, number>()
 
   compareFun: CompareFun<T> = (prev, next) => JSON.stringify(prev) === JSON.stringify(next)
 
