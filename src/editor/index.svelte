@@ -1,30 +1,9 @@
 <script lang="ts">
-  import Tweakpane from 'tweakpane'
-  const PARAMS = {
-    speed: 0.5,
-    boolean: false,
-  };
-
-  // Pass the object and its key to pane
-  const pane = new Tweakpane({
-    title: '测试 pane'
-  });
-  pane.addInput(PARAMS, 'speed')
-  pane.addInput(PARAMS, 'boolean');
-  pane.addInput(PARAMS, 'color');
-  pane.addInput(PARAMS, 'number');
-  pane.addInput(PARAMS, 'string');
-
-  const pane2 = new Tweakpane({
-    title: '测试 pane2'
-  });
-
-  pane2.addInput(PARAMS, 'speed')
-
-
-  function handleSave() {
-
-  }
+    import config from './core/config.svelte'
+  // pane.addInput(PARAMS, 'boolean');
+  // pane.addInput(PARAMS, 'color');
+  // pane.addInput(PARAMS, 'number');
+  // pane.addInput(PARAMS, 'string');
 </script>
 
 <svelte:head>
@@ -41,12 +20,13 @@
             <!--                       id="draft_{{=vId}}" tag="span" class="save-tip"/>-->
         </div>
         <div class="fr mr20" id="header_btns">
-            <button class="header-btn mr20" on:click={handleSave}>保存</button>
+            <button class="header-btn mr20">保存</button>
         </div>
     </div>
 
-
-
+    <div style="margin-top: 200px">
+        <config/>
+    </div>
 </main>
 
 
