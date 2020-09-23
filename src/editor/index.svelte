@@ -1,5 +1,26 @@
 <script lang="ts">
-  export let name: string;
+  import Tweakpane from 'tweakpane'
+  const PARAMS = {
+    speed: 0.5,
+    boolean: false,
+  };
+
+  // Pass the object and its key to pane
+  const pane = new Tweakpane({
+    title: '测试 pane'
+  });
+  pane.addInput(PARAMS, 'speed')
+  pane.addInput(PARAMS, 'boolean');
+  pane.addInput(PARAMS, 'color');
+  pane.addInput(PARAMS, 'number');
+  pane.addInput(PARAMS, 'string');
+
+  const pane2 = new Tweakpane({
+    title: '测试 pane2'
+  });
+
+  pane2.addInput(PARAMS, 'speed')
+
 
   function handleSave() {
 
@@ -7,11 +28,9 @@
 </script>
 
 <svelte:head>
-
 </svelte:head>
 
 <main>
-
     <div class="logo">
         <div class="fl logo-cnt">
             <i class="iconfont mr10">&#xe63c;</i>打印设计器&trade;
@@ -27,20 +46,10 @@
     </div>
 
 
-    <div class="body">
-        <div class="hp100 fl unselectable" >core/toolbox</div>
-        <!--        <mx-vframe src="./core/toolbox" id="toolbox_{{=vId}}" class="hp100 fl unselectable" />-->
-        <div class="canvas fl">
-            <!--            <mx-vframe src="./core/toolbar" class="toolbar unselectable" />-->
-            <!--            <mx-vframe src="./core/axis?cnt={{=vId}}_stage" class="pr unselectable"/>-->
-            <!--            <mx-vframe src="./core/stage" id="{{=vId}}_stage" class="stage unselectable stage-deactive" />-->
-        </div>
-        <div class="hp100 fr " >core/property</div>
-        <!--        <mx-vframe src="./core/property" id="property_{{=vId}}" class="hp100 fr"/>-->
-    </div>
 
-    <p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
+
+
 
 <style lang="less">
     .logo {
